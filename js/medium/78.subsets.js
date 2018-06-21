@@ -36,5 +36,5 @@
  * @return {number[][]}
  */
 var subsets = function(nums) {
-    
+
 };
