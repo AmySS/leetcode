@@ -63,5 +63,31 @@
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
 var rotate = function(matrix) {
-    
+    let len = matrix.length;
+    for (let irow = 0; irow < len; irow++) {
+        let row = matrix[irow];
+        row.forEach((col, col_num)=> {
+            if (irow === 0) {
+                matrix.push([col]);
+            }else{
+                matrix[col_num+len].unshift(col);
+            }
+        });
+    }
+    matrix.splice(0, len);
 };
+// a not in-place solution
+// var rotate = function(matrix) {
+//     let temp = [];
+//     matrix.forEach((row, row_num)=> {
+//         row.forEach((col, col_num)=> {
+//             if (row_num === 0) {
+//                 temp.push([col]);
+//             }else {
+//                 temp[col_num].unshift(col);
+//             }
+//         });
+//     });
+//     matrix = temp;
+// };
+
