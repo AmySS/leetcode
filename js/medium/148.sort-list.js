@@ -53,7 +53,7 @@ var sortList = function(head) {
 	left = head;
 	return mergeSortList(sortList(left), sortList(right)); //归并排序
 };
-
+// 合并两个有序的链表
 function mergeSortList(left, right) {
 	if (!left) {
 		return right;
